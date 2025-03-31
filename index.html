@@ -26,16 +26,17 @@
 </head>
 <body class="font-['Inter'] bg-gray-900 text-gray-100">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-gray-900/95 backdrop-blur-lg border-b border-gray-800">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Data to Decision</span>
+            <a class="navbar-brand text-xl md:text-2xl" href="#home">
+                <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Data to Decision</span>
             </a>
-            <button class="navbar-toggler border-gray-700" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler border-0 focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-center lg:text-left">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
@@ -48,26 +49,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-90"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1\" height=\"1\" fill=\"rgba(59, 130, 246, 0.05)\"/></svg>')] opacity-20"></div>
-        <div class="container relative z-10">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Turning Data into <span class="text-blue-400">Actionable Decisions</span></h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 opacity-90">Transform your business with cutting-edge data analytics, AI-driven insights, and powerful visualization tools.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="btn btn-primary btn-lg px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300">Get Started</a>
-                        <a href="#services" class="btn btn-outline btn-lg px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300">Learn More</a>
+    <section id="home" class="hero min-h-screen flex items-center">
+        <div class="container">
+            <div class="row items-center">
+                <div class="col-lg-6 text-center lg:text-left mb-8 lg:mb-0">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        Transform Your Data into Actionable Insights
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-8">
+                        Unlock the power of your data with our advanced analytics solutions
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="btn btn-primary w-full sm:w-auto">Get Started</a>
+                        <a href="#services" class="btn btn-outline w-full sm:w-auto">Learn More</a>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-8 md:mt-0" data-aos="fade-left">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl opacity-20 blur-3xl"></div>
-                        <div class="relative z-10 bg-gray-800 rounded-3xl p-6 shadow-2xl">
-                            <canvas id="heroChart" class="w-full h-64"></canvas>
-                        </div>
-                    </div>
+                <div class="col-lg-6">
+                    <img src="path/to/hero-image.jpg" alt="Data Analytics" class="w-full rounded-lg shadow-xl">
                 </div>
             </div>
         </div>
@@ -106,15 +104,17 @@
     </section> -->
 
     <!-- Services Section -->
-    <section id="services" class="services py-20">
+    <section id="services" class="services py-16 md:py-24">
         <div class="container">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-                <p class="text-lg md:text-xl text-gray-400">Comprehensive data solutions for your business needs</p>
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto px-4">
+                    Comprehensive data solutions tailored to your business needs
+                </p>
             </div>
-            <div class="row g-6">
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-full p-6 md:p-8">
                         <div class="icon-wrapper mb-4">
                             <i class="fas fa-chart-line text-3xl text-blue-400"></i>
                         </div>
@@ -122,8 +122,8 @@
                         <p class="text-gray-400">Transform complex data into clear, actionable insights with interactive visualizations.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-full p-6 md:p-8">
                         <div class="icon-wrapper mb-4">
                             <i class="fas fa-brain text-3xl text-blue-400"></i>
                         </div>
@@ -131,8 +131,8 @@
                         <p class="text-gray-400">Make data-driven decisions with comprehensive business intelligence solutions.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-full p-6 md:p-8">
                         <div class="icon-wrapper mb-4">
                             <i class="fas fa-robot text-3xl text-blue-400"></i>
                         </div>
@@ -140,8 +140,8 @@
                         <p class="text-gray-400">Leverage cutting-edge AI and machine learning for predictive analytics.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-full p-6 md:p-8">
                         <div class="icon-wrapper mb-4">
                             <i class="fas fa-code text-3xl text-blue-400"></i>
                         </div>
@@ -257,7 +257,7 @@
     </section>
 
     <!-- Power BI & Dashboards Section -->
-    <section id="dashboards" class="dashboards py-16 bg-gray-800">
+    <section id="dashboards" class="dashboards py-16 md:py-24 bg-gray-800">
         <div class="container">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Interactive Dashboards</h2>
@@ -266,10 +266,10 @@
 
             <div class="row g-6">
                 <!-- Dashboard Example 1 -->
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="dashboard-card bg-gray-900 rounded-xl overflow-hidden h-full">
+                <div class="col-12 col-lg-6 mb-6 lg:mb-0">
+                    <div class="dashboard-card">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sales Dashboard" class="w-full h-64 object-cover">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sales Dashboard" class="w-full h-48 md:h-64 object-cover">
                             <div class="absolute top-4 right-4">
                                 <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Power BI</span>
                             </div>
@@ -289,10 +289,10 @@
                 </div>
 
                 <!-- Dashboard Example 2 -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="dashboard-card bg-gray-900 rounded-xl overflow-hidden h-full">
+                <div class="col-12 col-lg-6 mb-6 lg:mb-0">
+                    <div class="dashboard-card">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Analytics Dashboard" class="w-full h-64 object-cover">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Analytics Dashboard" class="w-full h-48 md:h-64 object-cover">
                             <div class="absolute top-4 right-4">
                                 <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Custom Solution</span>
                             </div>
@@ -398,43 +398,37 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact py-20">
+    <section id="contact" class="contact py-16 md:py-24">
         <div class="container">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-                <p class="text-lg md:text-xl text-gray-400">Let's discuss how we can help your business</p>
-            </div>
-            <div class="row g-6">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <form class="contact-form bg-gray-800 p-8 rounded-xl">
+            <div class="row">
+                <div class="col-lg-6 mb-8 lg:mb-0">
+                    <form class="contact-form p-6 md:p-8">
                         <div class="mb-4">
-                            <input type="text" class="form-control bg-gray-900 border-gray-700 text-gray-100" placeholder="Your Name" required>
+                            <input type="text" class="form-control w-full" placeholder="Your Name">
                         </div>
                         <div class="mb-4">
-                            <input type="email" class="form-control bg-gray-900 border-gray-700 text-gray-100" placeholder="Your Email" required>
+                            <input type="email" class="form-control w-full" placeholder="Your Email">
                         </div>
                         <div class="mb-4">
-                            <textarea class="form-control bg-gray-900 border-gray-700 text-gray-100" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control w-full" rows="5" placeholder="Your Message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-full py-3 rounded-lg">Send Message</button>
+                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
                     </form>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="bg-gray-800 p-8 rounded-xl h-full">
-                        <div id="map" class="w-full h-96 rounded-lg mb-6"></div>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
-                                <span>123 Business Street, City, Country</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone text-blue-400 mr-3"></i>
-                                <span>+1 234 567 890</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-blue-400 mr-3"></i>
-                                <span>info@datatodecision.com</span>
-                            </div>
+                <div class="col-lg-6">
+                    <div id="map" class="w-full h-96 rounded-lg mb-6"></div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                            <span>123 Business Street, City, Country</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+1 234 567 890</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>info@datatodecision.com</span>
                         </div>
                     </div>
                 </div>
@@ -443,14 +437,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-12 bg-gray-900 border-t border-gray-800">
+    <footer class="footer py-12 md:py-16">
         <div class="container">
             <div class="row g-6">
-                <div class="col-lg-4">
+                <div class="col-md-6 col-lg-3 mb-6 lg:mb-0">
                     <h3 class="text-xl font-bold text-white mb-4">Data to Decision</h3>
                     <p class="text-gray-400">Transform your business with data-driven insights and analytics solutions.</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-md-6 col-lg-2">
                     <h4 class="text-white font-semibold mb-4">Quick Links</h4>
                     <ul class="list-unstyled">
                         <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
@@ -461,7 +455,7 @@
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <h4 class="text-white font-semibold mb-4">Contact Info</h4>
                     <ul class="list-unstyled text-gray-400">
                         <li class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Business Street, City</li>
@@ -469,7 +463,7 @@
                         <li class="mb-2"><i class="fas fa-envelope mr-2"></i> info@datatodecision.com</li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <h4 class="text-white font-semibold mb-4">Follow Us</h4>
                     <div class="social-links">
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors mx-2"><i class="fab fa-linkedin text-xl"></i></a>
