@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data to Decision - Transform your business with data analytics, business intelligence, and AI-driven insights">
+    <meta name="keywords" content="data analytics, business intelligence, AI, machine learning, data visualization">
+    <title>Data to Decision - Transform Your Business with Data</title>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="font-['Inter'] bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-gray-900/95 backdrop-blur-lg border-b border-gray-800">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Data to Decision</span>
+            </a>
+            <button class="navbar-toggler border-gray-700" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dashboards">Dashboards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-90"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1\" height=\"1\" fill=\"rgba(59, 130, 246, 0.05)\"/></svg>')] opacity-20"></div>
+        <div class="container relative z-10">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Turning Data into <span class="text-blue-400">Actionable Decisions</span></h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 opacity-90">Transform your business with cutting-edge data analytics, AI-driven insights, and powerful visualization tools.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn btn-primary btn-lg px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300">Get Started</a>
+                        <a href="#services" class="btn btn-outline btn-lg px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-8 md:mt-0" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl opacity-20 blur-3xl"></div>
+                        <div class="relative z-10 bg-gray-800 rounded-3xl p-6 shadow-2xl">
+                            <canvas id="heroChart" class="w-full h-64"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <!-- <section class="stats py-20 bg-gray-800">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card text-center p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-2" data-count="500">0</div>
+                        <div class="text-gray-400">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card text-center p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-2" data-count="98">0</div>
+                        <div class="text-gray-400">  Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card text-center p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-2" data-count="50">0</div>
+                        <div class="text-gray-400">Team Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card text-center p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-2" data-count="15">0</div>
+                        <div class="text-gray-400">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="services py-20">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-lg md:text-xl text-gray-400">Comprehensive data solutions for your business needs</p>
+            </div>
+            <div class="row g-6">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-chart-line text-3xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Data Analytics & Visualization</h3>
+                        <p class="text-gray-400">Transform complex data into clear, actionable insights with interactive visualizations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-brain text-3xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Business Intelligence</h3>
+                        <p class="text-gray-400">Make data-driven decisions with comprehensive business intelligence solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-robot text-3xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">AI & ML Consulting</h3>
+                        <p class="text-gray-400">Leverage cutting-edge AI and machine learning for predictive analytics.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="service-card bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-code text-3xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Custom Development</h3>
+                        <p class="text-gray-400">Tailored software solutions for your specific business needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-20 bg-gray-800">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Choose Us?</h2>
+                    <p class="text-gray-400 mb-6">We combine expertise in data analytics, business intelligence, and artificial intelligence to deliver transformative solutions for your business.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Expert Team</h4>
+                                <p class="text-gray-400">Our team of data scientists and analysts bring years of industry experience.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Innovative Solutions</h4>
+                                <p class="text-gray-400">We leverage cutting-edge technologies to solve complex business challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Proven Track Record</h4>
+                                <p class="text-gray-400">Successfully delivered hundreds of projects across various industries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-8 lg:mt-0" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl opacity-20 blur-3xl"></div>
+                        <div class="relative z-10 bg-gray-900 rounded-3xl p-6 shadow-2xl">
+                            <canvas id="aboutChart" class="w-full h-64"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies py-20">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+                <p class="text-lg md:text-xl text-gray-400">Real-world success stories from our clients</p>
+            </div>
+            <div class="row g-6">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="case-study-card bg-gray-800 rounded-xl p-6">
+                        <div class="mb-6">
+                            <canvas id="caseStudyChart1" class="w-full h-48"></canvas>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">E-commerce Analytics</h3>
+                        <p class="text-gray-400 mb-4">Helped an online retailer increase conversion rates by 45% through advanced analytics.</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Client" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-semibold">John Smith</h4>
+                                <p class="text-gray-400">CEO, TechRetail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="case-study-card bg-gray-800 rounded-xl p-6">
+                        <div class="mb-6">
+                            <canvas id="caseStudyChart2" class="w-full h-48"></canvas>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Manufacturing Optimization</h3>
+                        <p class="text-gray-400 mb-4">Reduced operational costs by 30% using predictive maintenance analytics.</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-semibold">Sarah Johnson</h4>
+                                <p class="text-gray-400">CTO, SmartFactory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="case-study-card bg-gray-800 rounded-xl p-6">
+                        <div class="mb-6">
+                            <canvas id="caseStudyChart3" class="w-full h-48"></canvas>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Manufacturing Optimization</h3>
+                        <p class="text-gray-400 mb-4">Reduced operational costs by 30% using predictive maintenance analytics.</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-semibold">Sarah Johnson</h4>
+                                <p class="text-gray-400">CTO, SmartFactory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Power BI & Dashboards Section -->
+    <section id="dashboards" class="dashboards py-16 bg-gray-800">
+        <div class="container">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Interactive Dashboards</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Transform your data into powerful, interactive visualizations with Power BI and custom dashboard solutions.</p>
+            </div>
+
+            <div class="row g-6">
+                <!-- Dashboard Example 1 -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="dashboard-card bg-gray-900 rounded-xl overflow-hidden h-full">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sales Dashboard" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Power BI</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Sales Performance Dashboard</h3>
+                            <p class="text-gray-400 mb-4">Real-time sales analytics with interactive filters, KPI tracking, and predictive insights.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-chart-line text-blue-400"></i>
+                                    <span class="text-sm text-gray-400">Live Updates</span>
+                                </div>
+                                <a href="#" class="text-blue-400 hover:text-blue-300">View Demo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Example 2 -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="dashboard-card bg-gray-900 rounded-xl overflow-hidden h-full">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Analytics Dashboard" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Custom Solution</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Business Analytics Hub</h3>
+                            <p class="text-gray-400 mb-4">Comprehensive business intelligence platform with custom visualizations and automated reporting.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-sync text-blue-400"></i>
+                                    <span class="text-sm text-gray-400">Automated Reports</span>
+                                </div>
+                                <a href="#" class="text-blue-400 hover:text-blue-300">View Demo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="row g-6 mt-12">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-pie text-2xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Interactive Visualizations</h3>
+                        <p class="text-gray-400">Create dynamic, interactive charts and graphs that respond to user interactions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-2xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Real-time Data</h3>
+                        <p class="text-gray-400">Connect to multiple data sources and get instant updates with real-time synchronization.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mobile-alt text-2xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Mobile Responsive</h3>
+                        <p class="text-gray-400">Access your dashboards from any device with fully responsive design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Data?</h3>
+                <p class="text-gray-400 mb-6">Let us help you create powerful, interactive dashboards that drive business decisions.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-outline">Schedule Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog py-20 bg-gray-800">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest Insights</h2>
+                <p class="text-lg md:text-xl text-gray-400">Stay updated with the latest trends in data science and analytics</p>
+            </div>
+            <div class="row g-6">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <article class="blog-card bg-gray-900 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">The Future of AI in Business</h3>
+                            <p class="text-gray-400 mb-4">Explore how artificial intelligence is transforming business operations and decision-making.</p>
+                            <a href="#" class="text-blue-400 hover:text-blue-300">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <article class="blog-card bg-gray-900 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Data Visualization Best Practices</h3>
+                            <p class="text-gray-400 mb-4">Learn how to create compelling data visualizations that drive decision-making.</p>
+                            <a href="#" class="text-blue-400 hover:text-blue-300">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <article class="blog-card bg-gray-900 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Predictive Analytics Guide</h3>
+                            <p class="text-gray-400 mb-4">A comprehensive guide to implementing predictive analytics in your business.</p>
+                            <a href="#" class="text-blue-400 hover:text-blue-300">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact py-20">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-lg md:text-xl text-gray-400">Let's discuss how we can help your business</p>
+            </div>
+            <div class="row g-6">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <form class="contact-form bg-gray-800 p-8 rounded-xl">
+                        <div class="mb-4">
+                            <input type="text" class="form-control bg-gray-900 border-gray-700 text-gray-100" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control bg-gray-900 border-gray-700 text-gray-100" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control bg-gray-900 border-gray-700 text-gray-100" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full py-3 rounded-lg">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="bg-gray-800 p-8 rounded-xl h-full">
+                        <div id="map" class="w-full h-96 rounded-lg mb-6"></div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                                <span>123 Business Street, City, Country</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-400 mr-3"></i>
+                                <span>+1 234 567 890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                                <span>info@datatodecision.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12 bg-gray-900 border-t border-gray-800">
+        <div class="container">
+            <div class="row g-6">
+                <div class="col-lg-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Data to Decision</h3>
+                    <p class="text-gray-400">Transform your business with data-driven insights and analytics solutions.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#dashboards" class="text-gray-400 hover:text-white transition-colors">Dashboards</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <ul class="list-unstyled text-gray-400">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Business Street, City</li>
+                        <li class="mb-2"><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li class="mb-2"><i class="fas fa-envelope mr-2"></i> info@datatodecision.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors mx-2"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors mx-2"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors mx-2"><i class="fab fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Data to Decision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Counter Animation
+        const counters = document.querySelectorAll('[data-count]');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            gsap.to(counter, {
+                innerHTML: target,
+                duration: 2,
+                snap: { innerHTML: 1 },
+                scrollTrigger: {
+                    trigger: counter,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Hero Chart
+        const heroCtx = document.getElementById('heroChart').getContext('2d');
+        new Chart(heroCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Business Growth',
+                    data: [65, 59, 80, 81, 56, 95],
+                    borderColor: '#60A5FA',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(96, 165, 250, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
+
+        // About Chart
+        const aboutCtx = document.getElementById('aboutChart').getContext('2d');
+        new Chart(aboutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Data Analytics', 'Business Intelligence', 'AI & ML', 'Custom Development'],
+                datasets: [{
+                    data: [30, 25, 25, 20],
+                    backgroundColor: [
+                        '#60A5FA',
+                        '#3B82F6',
+                        '#2563EB',
+                        '#1D4ED8'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Case Study Charts
+        const caseStudyCtx1 = document.getElementById('caseStudyChart1').getContext('2d');
+        new Chart(caseStudyCtx1, {
+            type: 'bar',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                datasets: [{
+                    label: 'Conversion Rate',
+                    data: [2.5, 3.2, 3.8, 4.5],
+                    backgroundColor: '#60A5FA'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
+
+        const caseStudyCtx2 = document.getElementById('caseStudyChart2').getContext('2d');
+        new Chart(caseStudyCtx2, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Cost Reduction',
+                    data: [100, 95, 90, 85, 80, 70],
+                    borderColor: '#60A5FA',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(96, 165, 250, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
+        const caseStudyCtx3 = document.getElementById('caseStudyChart3').getContext('2d');
+        new Chart(caseStudyCtx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Cost Reduction',
+                    data: [100, 95, 90, 85, 80, 70],
+                    borderColor: '#60A5FA',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(96, 165, 250, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Google Maps
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE },
+                zoom: 15,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"lightness": -80}]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#2b3544"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#9ca5b3"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#f3d19c"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#17263c"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#515c6d"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"lightness": -20}]
+                    }
+                ]
+            });
+
+            const marker = new google.maps.Marker({
+                position: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE },
+                map: map,
+                title: 'Data to Decision'
+            });
+        }
+
+        // Initialize map when the page loads
+        window.onload = initMap;
+    </script>
+</body>
+</html> 
